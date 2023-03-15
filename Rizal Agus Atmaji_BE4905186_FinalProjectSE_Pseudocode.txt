@@ -1,0 +1,49 @@
+Nama : Rizal Agus Atmaji
+ID CAMP : BE4905186
+Pseudocode : Proses order makanan/minuman via online
+
+
+START
+DISPLAY "Halaman login"
+READ AND WRITE "akun" with string
+IF "akun" == FALSE THEN
+    CREATE "akun"
+ELSE
+    READ AND WRITE "no_telp" with string
+    READ AND WRITE "passowrd" with string
+    INPUT "no_telp" AND "password"
+    IF "no_telp" OR "password" == FALSE THEN
+        OUTPUT "no_telp atau password salah"
+    ELSE
+        DISPLAY "Halaman utama"
+    END IF
+END IF
+READ AND WRITE "makanan-minuman" with string
+READ AND WRITE "jumlah" with number
+READ AND WRITE "tambah_pesanan" with string
+WHILE "tambah_pesanan == TRUE"
+    DO 
+        INPUT "makanan-minuman"
+        INPUT "jumlah"
+        ADD "makanan-minuman" AND "jumlah" TO "cart"
+        STORE "total_harga" with "harga" times "jumlah"
+        OUTPUT "Tambah pesanan?"
+        INPUT "tambah_pesanan"
+END WHILE
+DISPLAY "Halaman keranjang"
+READ AND WRITE "alamat" with string
+READ AND WRITE "metode_pembayaran" with string
+INPUT "alamat"
+INPUT "metode_pembayaran"
+IF "metode_pembayaran" == "cashless" THEN
+    DO "verifikasi_pembayaran"
+    IF "verifikasi pembayaran" == TRUE THEN
+        OUTPUT "Pesanan berhasil dibuat"
+        DO "checkout"
+    ELSE
+        INPUT "metode_pembayaran"
+    END IF
+IF "metode_pembayaran" == "cash" THEN
+    OUTPUT "Pesanan berhasil dibuat"
+    DO "checkout"
+END IF
